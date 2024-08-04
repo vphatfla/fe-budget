@@ -1,10 +1,16 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024 MyApp. All rights reserved.</p>
+      <p>&copy; 2024 Van Phat Phan. All rights reserved.</p>
       <nav class="nav">
         <ul>
-          <li><router-link to="/">Home</router-link></li>
+          <github-button
+            href="https://github.com/vphatfla"
+            data-color-scheme="no-preference: light; light: light; dark: dark;"
+            data-size="large"
+            aria-label="Follow @buttons on GitHub"
+            >Follow @vphatfla</github-button
+          >
           <li><router-link to="/privacy">Privacy Policy</router-link></li>
           <li><router-link to="/terms">Terms of Service</router-link></li>
         </ul>
@@ -14,8 +20,10 @@
 </template>
 
 <script lang="ts">
+import GithubButton from 'vue-github-button'
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  components: { GithubButton }
 }
 </script>
 
