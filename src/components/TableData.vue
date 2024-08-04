@@ -49,7 +49,8 @@ export default {
   },
   methods: {
     convertDate(dateTimeStr) {
-      return new Intl.DateTimeFormat('en-US').format(new Date(dateTimeStr))
+      const date = new Date(dateTimeStr)
+      return (date.getUTCMonth() + 1) + '-'+ (date.getUTCDate()) + '-' +date.getUTCFullYear() 
     }
   }
 }

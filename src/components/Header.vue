@@ -1,29 +1,37 @@
 <template>
   <header class="header">
     <div class="container">
-      <h1 class="logo">MyApp</h1>
+      <h1 class="logo">Cow Pig Budget Tracking</h1>
       <nav class="nav">
         <ul>
           <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
           <li><router-link to="/contact">Contact</router-link></li>
+           <github-button
+            href="https://github.com/vphatfla"
+            data-color-scheme="no-preference: light; light: light; dark: dark;"
+            data-size="large"
+            aria-label="Follow @buttons on GitHub"
+            >Follow @vphatfla</github-button>
         </ul>
+
       </nav>
     </div>
   </header>
 </template>
 
 <script>
+import GithubButton from 'vue-github-button'
 export default {
-  name: 'Header'
+  name: 'Header',
+  components: {GithubButton}
 }
 </script>
 
 <style scoped>
 .header {
-  background-color: #333;
-  color: #fff;
-  padding: 0.5rem;
+  background-color: #cdcdcd2e;
+  color: #000000;
+  padding: 0.75rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -51,7 +59,7 @@ export default {
 }
 
 .nav a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
 }
 

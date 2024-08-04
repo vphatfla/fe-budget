@@ -19,6 +19,7 @@
 <script lang="ts">
 import { loginFunction } from '../auth/authService'
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: 'Login',
   data() {
     return {

@@ -10,7 +10,26 @@ export async function getTransactionsByUserId(user_id) {
       })
     ).json()
     if (response === null) return []
-    console.log('res = ' + JSON.stringify(response))
+    return response
+  } catch (err) {
+    return err
+  }
+}
+
+export async function getTransactionsByUserIdWithTimeRange(user_id, startDate, endDate) {
+  try {
+    const urlParam = new URLSearchParams({
+      userId: user_id, 
+      startDate: startDate, 
+      endDate: endDate
+    })
+    const response = await (
+      await fetch(BACKEND_BASE_URL + '/transactions/dateRange?' + urlParam, {
+        method: 'GET',
+        headers: authHeader()
+      })
+    ).json()
+    if (response === null) return []
     return response
   } catch (err) {
     return err

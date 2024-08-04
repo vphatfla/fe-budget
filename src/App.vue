@@ -7,7 +7,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <main class="main-content mt-5 mb-5 h-100">
     <RouterView />
   </main>
-  <Footer></Footer>
+  <!-- <Footer></Footer> -->
 </template>
 
 <script lang="ts">
