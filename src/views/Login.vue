@@ -18,13 +18,15 @@
 
 <script lang="ts">
 import { loginFunction } from '../auth/authService'
+import { useRouter } from 'vue-router';
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Login',
   data() {
     return {
       username: '',
-      password: ''
+      password: '',
+      router: useRouter()
     }
   },
   methods: {
@@ -35,10 +37,11 @@ export default {
         console.log('log in successed')
         const user_id = localStorage.getItem('user_id') || ''
         console.log('user id = ', +user_id)
-        this.$router.push({
-          path: '/transactions',
-          query: { userId: user_id }
-        })
+        this.router.push({ path: '/transactions', query: { userId: user_id } })
+        // this.$router.push({
+        //   path: '/transactions',
+        //   query: { userId: user_id }
+        // })
       } else {
         console.log(res)
       }
