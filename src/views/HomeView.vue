@@ -1,30 +1,31 @@
 <template>
-  <div class="col-12 h-100 container d-flex align-items-center">
-    <div class="row col-12 d-flex align-items-center">
+  <div class="col-12 h-100 d-flex justify-content-center">
+    <div class="row col-12 d-flex justify-content-center">
       <!-- Your page content goes here -->
-      <div class="col col-md-9">
-        <h1>Welcome to Spending Tracking</h1>
+      <div class="col col-md-7 d-flex justify-content-center align-items-center">
+        <h1>Track Your Spending with Piggy</h1>
       </div>
-      <div class="col col-md-3">
-        <div class="row">
-          <div class="col">
-            <RouterLink class="btn btn-primary" to="/login">Login</RouterLink>
-            <!-- <button>Login</button> -->
-          </div>
-          <div class="col">
-            <!-- <button>Sign Up</button> -->
-            <RouterLink class="btn btn-primary" to="/signup">Sign Up</RouterLink>
-          </div>
-        </div>
+      <div class="col col-md-5 my-auto ">
+        <LogIn  v-if="isToLogInChosen" ></LogIn>
+        <SignUp v-else></SignUp>
+        <a href="#" @click.prevent="isToLogInChosen = !isToLogInChosen">Don't have an account? Sign Up!</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import LogIn from '../components/LogIn.vue'
+import SignUp from '../components/SignUp.vue'
 export default {
-  methods: {
-    loginButtonHandler() {}
+  components: {
+    LogIn,
+    SignUp
+  },
+  data() {
+    return {
+      isToLogInChosen: true
+    }
   }
 }
 </script>

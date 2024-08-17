@@ -1,19 +1,18 @@
 <template>
   <header class="header">
     <div class="container">
-      <h1 class="logo">Cow Pig Budget Tracking</h1>
+      <h1 class="logo mb-0">Piggy Tracking</h1>
       <nav class="nav">
         <ul>
           <li><router-link to="/">Home</router-link></li>
           <li><router-link to="/contact">Contact</router-link></li>
-           <github-button
+           <!-- <li> <github-button
             href="https://github.com/vphatfla"
             data-color-scheme="no-preference: light; light: light; dark: dark;"
             data-size="large"
             aria-label="Follow @buttons on GitHub"
-            >Follow @vphatfla</github-button>
+            >Follow @vphatfla</github-button> </li> -->
         </ul>
-
       </nav>
     </div>
   </header>
@@ -22,8 +21,9 @@
 <script>
 import GithubButton from 'vue-github-button'
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
+  // eslint-disable-next-line vue/multi-word-component-names, vue/no-reserved-component-names
   name: 'Header',
+  // eslint-disable-next-line vue/no-unused-components
   components: {GithubButton}
 }
 </script>
@@ -32,12 +32,10 @@ export default {
 .header {
   background-color: #cdcdcd2e;
   color: #000000;
-  padding: 0.75rem;
+  padding: 1rem;
   position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
 .container {
@@ -46,7 +44,6 @@ export default {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .logo {
@@ -57,6 +54,7 @@ export default {
   list-style: none;
   display: flex;
   gap: 1rem;
+  margin-bottom: 0 !important;
 }
 
 .nav a {
