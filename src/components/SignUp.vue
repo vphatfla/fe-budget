@@ -5,7 +5,7 @@
       <h4>Register Your New Account</h4>
     </div>
     <div class="text-left" style="max-width: 500px;">
-      <form @submit.prevent="login">
+      <form @submit.prevent="login" oninput='confirmPassword.setCustomValidity(confirmPassword.value != password.value ? "Passwords do not match." : "")'>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="username">
@@ -13,7 +13,11 @@
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" v-model="password">
+          <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" name="password">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="confirmPassword">
         </div>
         <div class="d-flex">
           <div class="mr-auto pr-2 pt-2 pb-2">
