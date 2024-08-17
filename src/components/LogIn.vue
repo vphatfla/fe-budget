@@ -21,7 +21,6 @@
           </div>
         </div>
       </form>
-      <a>Sign Up</a>
     </div>
     </div>
   </div>
