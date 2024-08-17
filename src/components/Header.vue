@@ -1,7 +1,10 @@
 <template>
   <header class="header">
     <div class="container">
-      <h1 class="logo mb-0">Piggy Tracking</h1>
+      <div class="d-flex">
+        <img src="../../static/pig-logo.png"  style="width: 2rem; margin-right: 2rem;">
+        <h1 class="logo mb-0">Piggy Tracking</h1>
+      </div>
       <nav class="nav">
         <ul>
           <li><router-link to="/">Home</router-link></li>
